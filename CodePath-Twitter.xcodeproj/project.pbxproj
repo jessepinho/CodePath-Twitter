@@ -13,6 +13,7 @@
 		EC54954E1BEAEEB0001FBFE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC54954C1BEAEEB0001FBFE1 /* Main.storyboard */; };
 		EC5495501BEAEEB0001FBFE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC54954F1BEAEEB0001FBFE1 /* Assets.xcassets */; };
 		EC5495531BEAEEB0001FBFE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC5495511BEAEEB0001FBFE1 /* LaunchScreen.storyboard */; };
+		EC54955B1BEAEEF7001FBFE1 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = EC54955A1BEAEEF7001FBFE1 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		EC54954F1BEAEEB0001FBFE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC5495521BEAEEB0001FBFE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC5495541BEAEEB0001FBFE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC54955A1BEAEEF7001FBFE1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,7 @@
 		EC5495371BEAEEB0001FBFE1 = {
 			isa = PBXGroup;
 			children = (
+				EC54955A1BEAEEF7001FBFE1 /* README.md */,
 				EC5495421BEAEEB0001FBFE1 /* CodePath-Twitter */,
 				EC5495411BEAEEB0001FBFE1 /* Products */,
 			);
@@ -151,6 +154,7 @@
 			files = (
 				EC54954B1BEAEEB0001FBFE1 /* ViewController.m in Sources */,
 				EC5495481BEAEEB0001FBFE1 /* AppDelegate.m in Sources */,
+				EC54955B1BEAEEF7001FBFE1 /* README.md in Sources */,
 				EC5495451BEAEEB0001FBFE1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
