@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
@@ -15,17 +16,59 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAS-Bg-k3N">
-                    <rect key="frame" x="237" y="125" width="126" height="30"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jmm-Hg-GXK">
+                    <rect key="frame" x="0.0" y="200" width="600" height="200"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAS-Bg-k3N">
+                            <rect key="frame" x="8" y="150" width="584" height="50"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="w9M-pF-tgy"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <state key="normal" title="Log in">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="onLogin:" destination="-1" eventType="touchUpInside" id="OuG-pA-DeW"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter logo" translatesAutoresizingMaskIntoConstraints="NO" id="kvY-xr-Nh7">
+                            <rect key="frame" x="265" y="0.0" width="70" height="70"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="6sa-0n-D4E"/>
+                                <constraint firstAttribute="height" constant="70" id="wgc-o2-McC"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
                     <animations/>
-                    <state key="normal" title="Log in with Twitter"/>
-                    <connections>
-                        <action selector="onLogin:" destination="-1" eventType="touchUpInside" id="OuG-pA-DeW"/>
-                    </connections>
-                </button>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="1hD-Xe-SSd"/>
+                        <constraint firstItem="xAS-Bg-k3N" firstAttribute="centerX" secondItem="jmm-Hg-GXK" secondAttribute="centerX" id="1oi-sa-lle"/>
+                        <constraint firstItem="kvY-xr-Nh7" firstAttribute="centerX" secondItem="jmm-Hg-GXK" secondAttribute="centerX" id="FeB-im-IUc"/>
+                        <constraint firstItem="kvY-xr-Nh7" firstAttribute="top" secondItem="jmm-Hg-GXK" secondAttribute="top" id="Uk3-Gl-JBS"/>
+                        <constraint firstAttribute="bottom" secondItem="xAS-Bg-k3N" secondAttribute="bottom" id="Zrk-Fx-G9K"/>
+                        <constraint firstItem="xAS-Bg-k3N" firstAttribute="leading" secondItem="jmm-Hg-GXK" secondAttribute="leadingMargin" id="ux0-EE-FAv"/>
+                        <constraint firstItem="xAS-Bg-k3N" firstAttribute="trailing" secondItem="jmm-Hg-GXK" secondAttribute="trailingMargin" id="xFV-2R-vSX"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="1oi-sa-lle"/>
+                        </mask>
+                    </variation>
+                </view>
             </subviews>
             <animations/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.33333333333333331" green="0.67450980392156867" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="jmm-Hg-GXK" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="7uL-4n-kDk"/>
+                <constraint firstItem="jmm-Hg-GXK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nrg-R9-LgU"/>
+                <constraint firstAttribute="trailing" secondItem="jmm-Hg-GXK" secondAttribute="trailing" id="qZz-GO-12Y"/>
+            </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="Twitter logo" width="1687" height="1687"/>
+    </resources>
 </document>
