@@ -15,7 +15,6 @@ The following **required** functionality is completed:
 - [X] User can pull to refresh.
 - [ ] User can compose a new tweet by tapping on a compose button.
 - [ ] User can tap on a tweet to view it, with controls to retweet, favorite, and reply.
-- [ ] User can retweet, favorite, and reply to the tweet directly from the timeline feed.
 
 The following **optional** features are implemented:
 
