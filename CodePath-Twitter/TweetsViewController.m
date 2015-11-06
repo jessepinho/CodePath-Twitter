@@ -21,11 +21,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setUpNavBar];
     [self setUpTable];
     [self fetchTweets];
 }
 
-- (IBAction)onLogOut:(id)sender {
+- (void)logOut {
     [User logOut];
 }
 
@@ -36,6 +37,12 @@
             [self.tableView reloadData];
         }
     }];
+}
+
+- (void)setUpNavBar {
+    self.title = @"Timeline";
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(logOut)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:nil];
 }
 
 - (void)setUpTable {
