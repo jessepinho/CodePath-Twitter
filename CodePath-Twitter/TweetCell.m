@@ -8,6 +8,7 @@
 
 #import "UIImageView+AFNetworking.h"
 #import "TweetCell.h"
+#import "TweetDateFormatter.h"
 
 @interface TweetCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
@@ -19,17 +20,10 @@
 @implementation TweetCell
 - (void)setTweet:(Tweet *)tweet {
     _tweet = tweet;
-    self.timeLabel.text = [self timestamp];
+    self.timeLabel.text = [TweetDateFormatter stringFromDate:tweet.createdAt];
     self.tweetLabel.text = tweet.text;
     self.usernameLabel.text = [NSString stringWithFormat:@"@%@", tweet.user.screenName];
     [self.profileImageView setImageWithURL:tweet.user.profileImageURL];
     [self.tweetLabel sizeToFit];
-}
-
-- (NSString *)timestamp {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateStyle = NSDateFormatterShortStyle;
-    formatter.timeStyle = NSDateFormatterShortStyle;
-    return [formatter stringFromDate:self.tweet.createdAt];
 }
 @end
