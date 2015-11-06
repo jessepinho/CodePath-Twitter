@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TweetsViewController">
             <connections>
+                <outlet property="tableView" destination="ztB-wx-9mq" id="1mL-8O-bHm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,8 +16,13 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ztB-wx-9mq">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oha-oT-Bpj">
-                    <rect key="frame" x="305" y="155" width="52" height="30"/>
+                    <rect key="frame" x="520" y="17" width="52" height="30"/>
                     <animations/>
                     <state key="normal" title="Log out"/>
                     <connections>
@@ -26,6 +32,12 @@
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ztB-wx-9mq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3qa-8d-dAs"/>
+                <constraint firstItem="ztB-wx-9mq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FXL-Ec-fcf"/>
+                <constraint firstAttribute="trailing" secondItem="ztB-wx-9mq" secondAttribute="trailing" id="Xi9-fT-nHi"/>
+                <constraint firstAttribute="bottom" secondItem="ztB-wx-9mq" secondAttribute="bottom" id="eZ5-Mm-WbI"/>
+            </constraints>
         </view>
     </objects>
 </document>
