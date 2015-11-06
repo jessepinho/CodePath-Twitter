@@ -10,6 +10,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TweetCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *tweetLabel;
 @property (nonatomic, strong) Tweet *tweet;
 @end
