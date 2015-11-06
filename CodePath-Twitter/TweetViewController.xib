@@ -21,8 +21,8 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tweet text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKO-ez-4Te">
-                    <rect key="frame" x="8" y="116" width="584" height="383"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKO-ez-4Te">
+                    <rect key="frame" x="8" y="116" width="584" height="21"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -54,13 +54,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tH7-gQ-vJD">
-                    <rect key="frame" x="124" y="80" width="32" height="17"/>
+                    <rect key="frame" x="124" y="79" width="32" height="17"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="puZ-BL-wvn">
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="puZ-BL-wvn">
                     <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                     <animations/>
                     <items>
@@ -77,6 +77,7 @@
             <constraints>
                 <constraint firstAttribute="trailingMargin" secondItem="oHg-1K-VDX" secondAttribute="trailing" id="1uR-fB-ld9"/>
                 <constraint firstItem="aKO-ez-4Te" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="2p0-2p-0BZ"/>
+                <constraint firstAttribute="bottom" secondItem="puZ-BL-wvn" secondAttribute="bottom" id="69T-z3-bmd"/>
                 <constraint firstItem="1P9-hi-GEi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="EW0-vP-WEm"/>
                 <constraint firstItem="aKO-ez-4Te" firstAttribute="top" secondItem="1P9-hi-GEi" secondAttribute="bottom" constant="8" id="F4E-wJ-bI2"/>
                 <constraint firstItem="tH7-gQ-vJD" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="K4k-PS-yvc"/>
@@ -87,12 +88,16 @@
                 <constraint firstItem="slO-mD-o4i" firstAttribute="leading" secondItem="1P9-hi-GEi" secondAttribute="trailing" constant="16" id="aw5-LP-zso"/>
                 <constraint firstItem="tH7-gQ-vJD" firstAttribute="top" secondItem="slO-mD-o4i" secondAttribute="bottom" constant="8" id="ba7-hc-4gZ"/>
                 <constraint firstItem="aKO-ez-4Te" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" id="cwT-Gw-vIC"/>
+                <constraint firstItem="puZ-BL-wvn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="aKO-ez-4Te" secondAttribute="bottom" id="hS5-JG-Und"/>
+                <constraint firstItem="puZ-BL-wvn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iLD-mc-K4n"/>
                 <constraint firstItem="aKO-ez-4Te" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="k8f-tK-VKa"/>
                 <constraint firstItem="oHg-1K-VDX" firstAttribute="leading" secondItem="1P9-hi-GEi" secondAttribute="trailing" constant="16" id="mg9-t6-qoN"/>
+                <constraint firstAttribute="trailing" secondItem="puZ-BL-wvn" secondAttribute="trailing" id="qM0-2m-gi1"/>
                 <constraint firstItem="tH7-gQ-vJD" firstAttribute="leading" secondItem="1P9-hi-GEi" secondAttribute="trailing" constant="16" id="s2g-8V-bse"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="cwT-Gw-vIC"/>
                     <exclude reference="K4k-PS-yvc"/>
                     <exclude reference="X1L-9f-pio"/>
                 </mask>
