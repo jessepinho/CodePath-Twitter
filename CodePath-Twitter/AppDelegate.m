@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "LoginViewController.h"
+#import "Tweet.h"
+#import "TwitterClient.h"
+#import "User.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +20,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    LoginViewController *vc = [[LoginViewController alloc] init];
+    self.window.rootViewController = vc;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
@@ -40,6 +47,11 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options {
+    [[TwitterClient sharedInstance] openURL:url];
+    return YES;
 }
 
 @end
