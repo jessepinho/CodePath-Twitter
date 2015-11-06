@@ -48,7 +48,7 @@
 		C8A2358D28C848AA38A7FDA3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D0E983BB37077EE287FD2D4A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB246185C6D8B7773C37E430 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		EC5495401BEAEEB0001FBFE1 /* CodePath-Twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CodePath-Twitter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC5495401BEAEEB0001FBFE1 /* Twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC5495441BEAEEB0001FBFE1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EC5495461BEAEEB0001FBFE1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EC5495471BEAEEB0001FBFE1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 		EC5495411BEAEEB0001FBFE1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EC5495401BEAEEB0001FBFE1 /* CodePath-Twitter.app */,
+				EC5495401BEAEEB0001FBFE1 /* Twitter.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -187,9 +187,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EC54953F1BEAEEB0001FBFE1 /* CodePath-Twitter */ = {
+		EC54953F1BEAEEB0001FBFE1 /* Twitter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC5495571BEAEEB0001FBFE1 /* Build configuration list for PBXNativeTarget "CodePath-Twitter" */;
+			buildConfigurationList = EC5495571BEAEEB0001FBFE1 /* Build configuration list for PBXNativeTarget "Twitter" */;
 			buildPhases = (
 				B4010BE263BA0353D4AA67D2 /* Check Pods Manifest.lock */,
 				EC54953C1BEAEEB0001FBFE1 /* Sources */,
@@ -201,9 +201,9 @@
 			);
 			dependencies = (
 			);
-			name = "CodePath-Twitter";
+			name = Twitter;
 			productName = "CodePath-Twitter";
-			productReference = EC5495401BEAEEB0001FBFE1 /* CodePath-Twitter.app */;
+			productReference = EC5495401BEAEEB0001FBFE1 /* Twitter.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -233,7 +233,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EC54953F1BEAEEB0001FBFE1 /* CodePath-Twitter */,
+				EC54953F1BEAEEB0001FBFE1 /* Twitter */,
 			);
 		};
 /* End PBXProject section */
@@ -440,7 +440,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC5495571BEAEEB0001FBFE1 /* Build configuration list for PBXNativeTarget "CodePath-Twitter" */ = {
+		EC5495571BEAEEB0001FBFE1 /* Build configuration list for PBXNativeTarget "Twitter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC5495581BEAEEB0001FBFE1 /* Debug */,

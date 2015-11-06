@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EC54953F1BEAEEB0001FBFE1"
-               BuildableName = "CodePath-Twitter.app"
-               BlueprintName = "CodePath-Twitter"
+               BuildableName = "Twitter.app"
+               BlueprintName = "Twitter"
                ReferencedContainer = "container:CodePath-Twitter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EC54953F1BEAEEB0001FBFE1"
-            BuildableName = "CodePath-Twitter.app"
-            BlueprintName = "CodePath-Twitter"
+            BuildableName = "Twitter.app"
+            BlueprintName = "Twitter"
             ReferencedContainer = "container:CodePath-Twitter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -56,8 +56,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EC54953F1BEAEEB0001FBFE1"
-            BuildableName = "CodePath-Twitter.app"
-            BlueprintName = "CodePath-Twitter"
+            BuildableName = "Twitter.app"
+            BlueprintName = "Twitter"
             ReferencedContainer = "container:CodePath-Twitter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -75,8 +75,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EC54953F1BEAEEB0001FBFE1"
-            BuildableName = "CodePath-Twitter.app"
-            BlueprintName = "CodePath-Twitter"
+            BuildableName = "Twitter.app"
+            BlueprintName = "Twitter"
             ReferencedContainer = "container:CodePath-Twitter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
