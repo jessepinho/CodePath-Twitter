@@ -6,6 +6,7 @@
 //  Copyright © 2015 Jesse Pinho. All rights reserved.
 //
 
+#import "Tweet.h"
 #import "TwitterClient.h"
 
 NSString * const kTwitterConsumerKey = @"Plvs5JuvDl437ALopleUMgEzN";
@@ -49,12 +50,22 @@ NSString * const kTwitterBaseUrl = @"https://api.twitter.com";
         
         [self GET:@"1.1/account/verify_credentials.json" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
             User *user = [[User alloc] initWithDictionary:responseObject];
+            [User setCurrentUser:user];
             self.loginCompletion(user, nil);
         } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
             self.loginCompletion(nil, error);
         }];
     } failure:^(NSError *error) {
         NSLog(@"Failed to get the access token");
+    }];
+}
+
+- (void)homeTimelineWithParams:(NSDictionary *)params completion:(void (^)(NSArray *, NSError *))completion {
+    [self GET:@"1.1/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSArray *tweets = [Tweet tweetsWithArray:responseObject];
+        completion(tweets, nil);
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        completion(nil, error);
     }];
 }
 @end

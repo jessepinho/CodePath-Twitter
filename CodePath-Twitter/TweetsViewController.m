@@ -1,36 +1,38 @@
 //
-//  LoginViewController.m
+//  TweetsViewController.m
 //  CodePath-Twitter
 //
-//  Created by Jesse Pinho on 11/4/15.
+//  Created by Jesse Pinho on 11/5/15.
 //  Copyright © 2015 Jesse Pinho. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "Tweet.h"
 #import "TweetsViewController.h"
 #import "TwitterClient.h"
+#import "User.h"
 
-@interface LoginViewController ()
+@interface TweetsViewController ()
 
 @end
 
-@implementation LoginViewController
+@implementation TweetsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[TwitterClient sharedInstance] homeTimelineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
+        for (Tweet *tweet in tweets) {
+            NSLog(@"%@", tweet.text);
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)onLogin:(id)sender {
-    [[TwitterClient sharedInstance] loginWithCompletion:^(User *user, NSError *error) {
-        if (user != nil) {
-            [self presentViewController:[[TweetsViewController alloc] init] animated:YES completion:nil];
-        } else {
-        }
-    }];
+- (IBAction)onLogOut:(id)sender {
+    [User logOut];
 }
 
 /*

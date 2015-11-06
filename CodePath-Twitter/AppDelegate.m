@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "Tweet.h"
+#import "TweetsViewController.h"
 #import "TwitterClient.h"
 #import "User.h"
 
@@ -21,10 +22,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    LoginViewController *vc = [[LoginViewController alloc] init];
-    self.window.rootViewController = vc;
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDidLogOut) name:UserDidLogOutNotification object:nil];
+
+    User *user = [User currentUser];
+    if (user != nil) {
+        self.window.rootViewController = [[TweetsViewController alloc] init];
+    } else {
+        self.window.rootViewController = [[LoginViewController alloc] init];
+    }
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)userDidLogOut {
+    self.window.rootViewController = [[LoginViewController alloc] init];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
