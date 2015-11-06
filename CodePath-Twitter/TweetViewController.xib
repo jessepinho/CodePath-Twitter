@@ -3,10 +3,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TweetViewController">
             <connections>
+                <outlet property="nameLabel" destination="oHg-1K-VDX" id="Q5I-VC-3cf"/>
+                <outlet property="profileImageView" destination="1P9-hi-GEi" id="iIE-EM-YPB"/>
+                <outlet property="screenNameLabel" destination="slO-mD-o4i" id="y4k-5M-4eD"/>
+                <outlet property="tweetLabel" destination="aKO-ez-4Te" id="WXE-KW-tmx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,8 +19,55 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKO-ez-4Te">
+                    <rect key="frame" x="8" y="116" width="584" height="476"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1P9-hi-GEi">
+                    <rect key="frame" x="8" y="8" width="100" height="100"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="34d-Va-U12"/>
+                        <constraint firstAttribute="width" constant="100" id="kbI-7J-OWW"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHg-1K-VDX">
+                    <rect key="frame" x="124" y="8" width="468" height="50"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="qF7-Hg-fpv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="36"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Screen name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slO-mD-o4i">
+                    <rect key="frame" x="124" y="66" width="101" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailingMargin" secondItem="oHg-1K-VDX" secondAttribute="trailing" id="1uR-fB-ld9"/>
+                <constraint firstItem="aKO-ez-4Te" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="2p0-2p-0BZ"/>
+                <constraint firstItem="1P9-hi-GEi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="EW0-vP-WEm"/>
+                <constraint firstItem="aKO-ez-4Te" firstAttribute="top" secondItem="1P9-hi-GEi" secondAttribute="bottom" constant="8" id="F4E-wJ-bI2"/>
+                <constraint firstItem="slO-mD-o4i" firstAttribute="top" secondItem="oHg-1K-VDX" secondAttribute="bottom" constant="8" id="Q2B-lT-xAH"/>
+                <constraint firstItem="oHg-1K-VDX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" id="YKH-0W-2si"/>
+                <constraint firstItem="1P9-hi-GEi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" id="YxL-wS-m8L"/>
+                <constraint firstItem="slO-mD-o4i" firstAttribute="leading" secondItem="1P9-hi-GEi" secondAttribute="trailing" constant="16" id="aw5-LP-zso"/>
+                <constraint firstItem="aKO-ez-4Te" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" id="cwT-Gw-vIC"/>
+                <constraint firstItem="aKO-ez-4Te" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="k8f-tK-VKa"/>
+                <constraint firstItem="oHg-1K-VDX" firstAttribute="leading" secondItem="1P9-hi-GEi" secondAttribute="trailing" constant="16" id="mg9-t6-qoN"/>
+            </constraints>
         </view>
     </objects>
 </document>
