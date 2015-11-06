@@ -9,6 +9,7 @@
 #import "Tweet.h"
 #import "TweetCell.h"
 #import "TweetsViewController.h"
+#import "TweetViewController.h"
 #import "TwitterClient.h"
 #import "User.h"
 
@@ -78,5 +79,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.tweets.count;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    TweetViewController *vc = [[TweetViewController alloc] init];
+    vc.tweet = self.tweets[indexPath.row];
+    [self.navigationController pushViewController:vc animated:YES];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 @end
