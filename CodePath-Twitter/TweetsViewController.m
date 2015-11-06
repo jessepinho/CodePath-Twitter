@@ -6,6 +6,7 @@
 //  Copyright © 2015 Jesse Pinho. All rights reserved.
 //
 
+#import "ComposeViewController.h"
 #import "Tweet.h"
 #import "TweetCell.h"
 #import "TweetsViewController.h"
@@ -50,11 +51,16 @@
     }];
 }
 
+- (void)onTweet {
+    ComposeViewController *vc = [[ComposeViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 - (void)setUpNavBar {
     self.title = @"Timeline";
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Twitter"]];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(logOut)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:nil];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(onTweet)];
 }
 
 - (void)setUpRefreshControl {
