@@ -11,7 +11,7 @@
 #import "TwitterClient.h"
 
 @interface ComposeViewController ()
-
+@property (weak, nonatomic) IBOutlet UITextView *tweetTextView;
 @end
 
 @implementation ComposeViewController
@@ -27,7 +27,9 @@
 }
 
 - (void)sendTweet {
-    [[TwitterClient sharedInstance] sendTweet:nil withCompletion:^(Tweet *tweet, NSError *error) {
+    self.tweet = [[Tweet alloc] init];
+    self.tweet.text = self.tweetTextView.text;
+    [[TwitterClient sharedInstance] sendTweet:self.tweet withCompletion:^(Tweet *tweet, NSError *error) {
         [self.navigationController popViewControllerAnimated:YES];
     }];
 }

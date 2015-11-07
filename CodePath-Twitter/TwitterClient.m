@@ -70,6 +70,12 @@ NSString * const kTwitterBaseUrl = @"https://api.twitter.com";
 }
 
 - (void)sendTweet:(Tweet *)tweet withCompletion:(void (^)(Tweet *, NSError *))completion {
-    completion(nil, nil);
+    NSDictionary *params = @{ @"status": tweet.text };
+    [self POST:@"1.1/statuses/update.json" parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        Tweet *tweet = [[Tweet alloc] initWithDictionary:responseObject];
+        completion(tweet, nil);
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        completion(nil, error);
+    }];
 }
 @end
