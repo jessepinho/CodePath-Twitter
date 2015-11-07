@@ -60,10 +60,22 @@
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="puZ-BL-wvn" customClass="TweetToolbar">
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="puZ-BL-wvn">
                     <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                     <animations/>
-                    <items/>
+                    <items>
+                        <barButtonItem image="Reply" id="YsB-i6-Qn9">
+                            <color key="tintColor" red="0.33333333329999998" green="0.67450980390000004" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="cEO-JO-ZnP"/>
+                        <barButtonItem image="Retweet" id="o00-hX-uIU">
+                            <color key="tintColor" red="0.33333333329999998" green="0.67450980390000004" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="hT8-br-BdK"/>
+                        <barButtonItem image="Like" id="YAz-FO-UMS">
+                            <color key="tintColor" red="0.33333333329999998" green="0.67450980390000004" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </items>
                 </toolbar>
             </subviews>
             <animations/>
@@ -98,4 +110,9 @@
             </variation>
         </view>
     </objects>
+    <resources>
+        <image name="Like" width="20" height="20"/>
+        <image name="Reply" width="20" height="20"/>
+        <image name="Retweet" width="20" height="20"/>
+    </resources>
 </document>
