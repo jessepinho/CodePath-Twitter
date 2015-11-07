@@ -66,14 +66,23 @@
                     <items>
                         <barButtonItem image="Reply" id="YsB-i6-Qn9">
                             <color key="tintColor" red="0.33333333329999998" green="0.67450980390000004" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="onReplyButton:" destination="-1" id="wwR-B7-5uJ"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="cEO-JO-ZnP"/>
                         <barButtonItem image="Retweet" id="o00-hX-uIU">
                             <color key="tintColor" red="0.33333333329999998" green="0.67450980390000004" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="onRetweetButton:" destination="-1" id="tEB-X9-mvA"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="hT8-br-BdK"/>
                         <barButtonItem image="Like" id="YAz-FO-UMS">
                             <color key="tintColor" red="0.33333333329999998" green="0.67450980390000004" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="onLikeButton:" destination="-1" id="1sD-hH-kry"/>
+                            </connections>
                         </barButtonItem>
                     </items>
                 </toolbar>
