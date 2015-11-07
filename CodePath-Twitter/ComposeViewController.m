@@ -18,10 +18,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setUpNavBar];
+    [self setUpTextView];
+    if (!self.tweet) {
+        self.tweet = [[Tweet alloc] init];
+    }
+}
+
+- (void)setUpNavBar {
     self.title = @"Compose";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStylePlain target:self action:@selector(sendTweet)];
+}
+
+- (void)setUpTextView {
     self.tweetTextView.text = @"";
     [self.tweetTextView becomeFirstResponder];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStylePlain target:self action:@selector(sendTweet)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,7 +40,6 @@
 }
 
 - (void)sendTweet {
-    self.tweet = [[Tweet alloc] init];
     self.tweet.text = self.tweetTextView.text;
     [[TwitterClient sharedInstance] sendTweet:self.tweet withCompletion:^(Tweet *tweet, NSError *error) {
         [self.navigationController popViewControllerAnimated:YES];
