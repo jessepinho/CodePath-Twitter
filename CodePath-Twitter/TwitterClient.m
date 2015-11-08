@@ -60,7 +60,9 @@ NSString * const kTwitterBaseUrl = @"https://api.twitter.com";
     }];
 }
 
-- (void)homeTimelineWithParams:(NSDictionary *)params completion:(void (^)(NSArray *, NSError *))completion {
+- (void)homeTimelineWithParams:(NSMutableDictionary *)params completion:(void (^)(NSArray *, NSError *))completion {
+    params = params == nil ? [NSMutableDictionary dictionary] : params;
+    params[@"include_my_retweet"] = @"t";
     [self GET:@"1.1/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSArray *tweets = [Tweet tweetsWithArray:responseObject];
         completion(tweets, nil);
@@ -76,6 +78,17 @@ NSString * const kTwitterBaseUrl = @"https://api.twitter.com";
         params[@"in_reply_to_status_id"] = tweet.inReplyTo.id;
     }
     [self POST:@"1.1/statuses/update.json" parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        Tweet *tweet = [[Tweet alloc] initWithDictionary:responseObject];
+        completion(tweet, nil);
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        completion(nil, error);
+    }];
+}
+
+- (void)retweetTweet:(Tweet *)tweet withCompletion:(void (^)(Tweet *, NSError *))completion {
+    NSString *url = [NSString stringWithFormat:@"1.1/statuses/retweet/%@.json", tweet.id];
+
+    [self POST:url parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         Tweet *tweet = [[Tweet alloc] initWithDictionary:responseObject];
         completion(tweet, nil);
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {

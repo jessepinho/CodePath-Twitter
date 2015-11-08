@@ -10,11 +10,13 @@
 #import "Tweet.h"
 #import "TweetDateFormatter.h"
 #import "TweetViewController.h"
+#import "TwitterClient.h"
 #import "UIImageView+AFNetworking.h"
 
 @interface TweetViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *retweetButton;
 @property (weak, nonatomic) IBOutlet UILabel *screenNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tweetLabel;
@@ -51,6 +53,11 @@
 }
 
 - (IBAction)onRetweetButton:(id)sender {
+    [[TwitterClient sharedInstance] retweetTweet:self.tweet withCompletion:^(Tweet *tweet, NSError *error) {
+        if (!error) {
+            self.retweetButton.enabled = NO;
+        }
+    }];
 }
 
 - (IBAction)onLikeButton:(id)sender {

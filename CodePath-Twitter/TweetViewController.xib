@@ -10,6 +10,7 @@
             <connections>
                 <outlet property="nameLabel" destination="oHg-1K-VDX" id="Q5I-VC-3cf"/>
                 <outlet property="profileImageView" destination="1P9-hi-GEi" id="iIE-EM-YPB"/>
+                <outlet property="retweetButton" destination="o00-hX-uIU" id="xW2-ws-aJf"/>
                 <outlet property="screenNameLabel" destination="slO-mD-o4i" id="knp-cq-zbb"/>
                 <outlet property="timeLabel" destination="tH7-gQ-vJD" id="EYN-ax-jBF"/>
                 <outlet property="tweetLabel" destination="aKO-ez-4Te" id="WXE-KW-tmx"/>
