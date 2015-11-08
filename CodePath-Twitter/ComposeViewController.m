@@ -31,7 +31,7 @@
 }
 
 - (void)setUpTextView {
-    self.tweetTextView.text = @"";
+    self.tweetTextView.text = self.tweet ? self.tweet.text : @"";
     [self.tweetTextView becomeFirstResponder];
 }
 

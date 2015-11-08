@@ -7,6 +7,7 @@
 //
 
 #import "ComposeViewController.h"
+#import "Tweet.h"
 #import "TweetDateFormatter.h"
 #import "TweetViewController.h"
 #import "UIImageView+AFNetworking.h"
@@ -42,6 +43,10 @@
 
 - (IBAction)onReplyButton:(id)sender {
     ComposeViewController *vc = [[ComposeViewController alloc] init];
+    Tweet *replyTweet = [[Tweet alloc] init];
+    replyTweet.inReplyTo = self.tweet;
+    replyTweet.text = [NSString stringWithFormat:@"@%@ ", self.tweet.user.screenName];
+    vc.tweet = replyTweet;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

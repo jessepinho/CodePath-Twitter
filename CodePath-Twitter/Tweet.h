@@ -10,9 +10,11 @@
 #import "User.h"
 
 @interface Tweet : NSObject
+@property (nonatomic, strong) NSNumber *id;
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSDate *createdAt;
 @property (nonatomic, strong) User *user;
+@property (nonatomic, strong) Tweet *inReplyTo;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 

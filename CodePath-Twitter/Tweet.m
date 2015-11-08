@@ -12,6 +12,7 @@
 - (id)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     if (self) {
+        self.id = dictionary[@"id"];
         self.text = dictionary[@"text"];
         self.user = [[User alloc] initWithDictionary:dictionary[@"user"]];
         NSString *createdAtString = dictionary[@"created_at"];
