@@ -14,6 +14,7 @@
 #import "UIImageView+AFNetworking.h"
 
 @interface TweetViewController ()
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *likeButton;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *retweetButton;
@@ -61,5 +62,10 @@
 }
 
 - (IBAction)onLikeButton:(id)sender {
+    [[TwitterClient sharedInstance] likeTweet:self.tweet withCompletion:^(Tweet *tweet, NSError *error) {
+        if (!error) {
+            self.likeButton.enabled = NO;
+        }
+    }];
 }
 @end
