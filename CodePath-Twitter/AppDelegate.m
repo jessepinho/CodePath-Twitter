@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "Tweet.h"
-#import "LoggedInContainerViewController.h"
+#import "ContainerViewController.h"
 #import "TwitterClient.h"
 #import "User.h"
 
@@ -27,7 +27,7 @@
 
     User *user = [User currentUser];
     if (user != nil) {
-        self.window.rootViewController = [[LoggedInContainerViewController alloc] init];
+        self.window.rootViewController = [[ContainerViewController alloc] init];
     } else {
         self.window.rootViewController = [[LoginViewController alloc] init];
     }

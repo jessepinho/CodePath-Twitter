@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoggedInContainerViewController : UIViewController
+@interface ContainerViewController : UIViewController
 
 @end

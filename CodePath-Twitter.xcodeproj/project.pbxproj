@@ -12,8 +12,8 @@
 		3A75E2F71BED64A1007DE4EB /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A75E2F51BED64A1007DE4EB /* ComposeViewController.xib */; };
 		3AD42DBA1BF7A8DA00265F70 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD42DB81BF7A8DA00265F70 /* ProfileViewController.m */; };
 		3AD42DBB1BF7A8DA00265F70 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD42DB91BF7A8DA00265F70 /* ProfileViewController.xib */; };
-		3AD42DBF1BF7BF5300265F70 /* LoggedInContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD42DBD1BF7BF5300265F70 /* LoggedInContainerViewController.m */; };
-		3AD42DC01BF7BF5300265F70 /* LoggedInContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD42DBE1BF7BF5300265F70 /* LoggedInContainerViewController.xib */; };
+		3AD42DBF1BF7BF5300265F70 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD42DBD1BF7BF5300265F70 /* ContainerViewController.m */; };
+		3AD42DC01BF7BF5300265F70 /* ContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD42DBE1BF7BF5300265F70 /* ContainerViewController.xib */; };
 		3AD42DC41BF7CFA700265F70 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD42DC21BF7CFA700265F70 /* MenuViewController.m */; };
 		3AD42DC51BF7CFA700265F70 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD42DC31BF7CFA700265F70 /* MenuViewController.xib */; };
 		3AD4979E1BEC47CC00C8D4BB /* TweetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD4979C1BEC47CC00C8D4BB /* TweetsViewController.m */; };
@@ -42,9 +42,9 @@
 		3AD42DB71BF7A8DA00265F70 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		3AD42DB81BF7A8DA00265F70 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		3AD42DB91BF7A8DA00265F70 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
-		3AD42DBC1BF7BF5300265F70 /* LoggedInContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggedInContainerViewController.h; sourceTree = "<group>"; };
-		3AD42DBD1BF7BF5300265F70 /* LoggedInContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggedInContainerViewController.m; sourceTree = "<group>"; };
-		3AD42DBE1BF7BF5300265F70 /* LoggedInContainerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoggedInContainerViewController.xib; sourceTree = "<group>"; };
+		3AD42DBC1BF7BF5300265F70 /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
+		3AD42DBD1BF7BF5300265F70 /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
+		3AD42DBE1BF7BF5300265F70 /* ContainerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContainerViewController.xib; sourceTree = "<group>"; };
 		3AD42DC11BF7CFA700265F70 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		3AD42DC21BF7CFA700265F70 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		3AD42DC31BF7CFA700265F70 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
@@ -121,9 +121,9 @@
 				3AD42DB71BF7A8DA00265F70 /* ProfileViewController.h */,
 				3AD42DB81BF7A8DA00265F70 /* ProfileViewController.m */,
 				3AD42DB91BF7A8DA00265F70 /* ProfileViewController.xib */,
-				3AD42DBC1BF7BF5300265F70 /* LoggedInContainerViewController.h */,
-				3AD42DBD1BF7BF5300265F70 /* LoggedInContainerViewController.m */,
-				3AD42DBE1BF7BF5300265F70 /* LoggedInContainerViewController.xib */,
+				3AD42DBC1BF7BF5300265F70 /* ContainerViewController.h */,
+				3AD42DBD1BF7BF5300265F70 /* ContainerViewController.m */,
+				3AD42DBE1BF7BF5300265F70 /* ContainerViewController.xib */,
 				3AD42DC11BF7CFA700265F70 /* MenuViewController.h */,
 				3AD42DC21BF7CFA700265F70 /* MenuViewController.m */,
 				3AD42DC31BF7CFA700265F70 /* MenuViewController.xib */,
@@ -266,7 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AD42DBB1BF7A8DA00265F70 /* ProfileViewController.xib in Resources */,
-				3AD42DC01BF7BF5300265F70 /* LoggedInContainerViewController.xib in Resources */,
+				3AD42DC01BF7BF5300265F70 /* ContainerViewController.xib in Resources */,
 				EC5495601BEAF219001FBFE1 /* LoginViewController.xib in Resources */,
 				3AD42DC51BF7CFA700265F70 /* MenuViewController.xib in Resources */,
 				3AD497B11BEC6CC100C8D4BB /* TweetViewController.xib in Resources */,
@@ -327,7 +327,7 @@
 				ECF03D211BEB05D900D5DB7A /* Tweet.m in Sources */,
 				EC5495451BEAEEB0001FBFE1 /* main.m in Sources */,
 				EC54955F1BEAF219001FBFE1 /* LoginViewController.m in Sources */,
-				3AD42DBF1BF7BF5300265F70 /* LoggedInContainerViewController.m in Sources */,
+				3AD42DBF1BF7BF5300265F70 /* ContainerViewController.m in Sources */,
 				3AD42DBA1BF7A8DA00265F70 /* ProfileViewController.m in Sources */,
 				3A75E2F61BED64A1007DE4EB /* ComposeViewController.m in Sources */,
 				3AD4979E1BEC47CC00C8D4BB /* TweetsViewController.m in Sources */,

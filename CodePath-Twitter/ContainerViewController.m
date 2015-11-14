@@ -6,11 +6,11 @@
 //  Copyright © 2015 Jesse Pinho. All rights reserved.
 //
 
-#import "LoggedInContainerViewController.h"
+#import "ContainerViewController.h"
 #import "TweetsViewController.h"
 #import "MenuViewController.h"
 
-@interface LoggedInContainerViewController () <MenuViewControllerDelegate>
+@interface ContainerViewController () <MenuViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *menuView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (nonatomic, strong) UIViewController *contentViewController;
@@ -20,7 +20,7 @@
 - (IBAction)onPanGesture:(UIPanGestureRecognizer *)sender;
 @end
 
-@implementation LoggedInContainerViewController
+@implementation ContainerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
