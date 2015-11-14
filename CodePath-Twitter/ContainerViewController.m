@@ -25,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.contentViewController = [TweetsViewController withTimelineType:TimelineTypeHome];
+    [self setUpContentViewShadow];
     [self setUpMenuViewController];
 }
 
@@ -37,7 +38,6 @@
         [self removeContentViewController];
     }
 
-
     UINavigationController *nvc = [self navigationControllerWithRootViewController:contentViewController];
     [nvc willMoveToParentViewController:self];
     [self addChildViewController:nvc];
@@ -46,6 +46,13 @@
     [nvc didMoveToParentViewController:self];
 
     _contentViewController = nvc;
+}
+
+- (void)setUpContentViewShadow {
+    self.contentView.layer.masksToBounds = NO;
+    self.contentView.layer.shadowOffset = CGSizeMake(0, 0);
+    self.contentView.layer.shadowRadius = 3;
+    self.contentView.layer.shadowOpacity = 0.35;
 }
 
 - (UINavigationController *)navigationControllerWithRootViewController:(UIViewController *)viewController {
@@ -75,7 +82,7 @@
 
 - (void)openMenu {
     [UIView animateWithDuration:0.35 animations:^{
-        self.leftMarginConstraint.constant = self.view.frame.size.width - 50;
+        self.leftMarginConstraint.constant = 80;
         [self.view layoutIfNeeded];
     }];
 }

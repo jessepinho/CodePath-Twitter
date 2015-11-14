@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController">
@@ -15,33 +16,50 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbb-g4-nNJ">
-                    <rect key="frame" x="8" y="8" width="41" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbb-g4-nNJ">
+                    <rect key="frame" x="16" y="16" width="48" height="48"/>
                     <animations/>
-                    <state key="normal" title="Home"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="ic_home_48pt"/>
                     <connections>
                         <action selector="onHomeButton:" destination="-1" eventType="touchUpInside" id="7QR-QF-cEg"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSa-37-v0S">
-                    <rect key="frame" x="8" y="77" width="69" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbE-05-T4O">
+                    <rect key="frame" x="16" y="144" width="48" height="48"/>
                     <animations/>
-                    <state key="normal" title="My profile"/>
-                    <connections>
-                        <action selector="onProfileButton:" destination="-1" eventType="touchUpInside" id="wCy-uX-vec"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbE-05-T4O">
-                    <rect key="frame" x="8" y="160" width="64" height="30"/>
-                    <animations/>
-                    <state key="normal" title="Mentions"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="ic_comment_48pt"/>
                     <connections>
                         <action selector="onMentionsButton:" destination="-1" eventType="touchUpInside" id="sZj-SJ-S6p"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSa-37-v0S">
+                    <rect key="frame" x="16" y="80" width="48" height="48"/>
+                    <animations/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="ic_person_48pt"/>
+                    <connections>
+                        <action selector="onProfileButton:" destination="-1" eventType="touchUpInside" id="wCy-uX-vec"/>
+                    </connections>
+                </button>
             </subviews>
             <animations/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.85125260779487177" green="0.85125260779487177" blue="0.85125260779487177" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="HSa-37-v0S" firstAttribute="top" secondItem="tbb-g4-nNJ" secondAttribute="bottom" constant="16" id="1Xj-c4-nn2"/>
+                <constraint firstItem="tbb-g4-nNJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="5n1-cX-fKq"/>
+                <constraint firstItem="HSa-37-v0S" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="6kv-oX-WBM"/>
+                <constraint firstItem="cbE-05-T4O" firstAttribute="top" secondItem="HSa-37-v0S" secondAttribute="bottom" constant="16" id="CJL-3W-ndj"/>
+                <constraint firstItem="cbE-05-T4O" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="NTe-6s-tyi"/>
+                <constraint firstItem="tbb-g4-nNJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" id="OMh-Yc-Edw"/>
+            </constraints>
+            <edgeInsets key="layoutMargins" top="16" left="16" bottom="16" right="16"/>
         </view>
     </objects>
+    <resources>
+        <image name="ic_comment_48pt" width="48" height="48"/>
+        <image name="ic_home_48pt" width="48" height="48"/>
+        <image name="ic_person_48pt" width="48" height="48"/>
+    </resources>
 </document>
