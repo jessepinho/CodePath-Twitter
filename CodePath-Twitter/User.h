@@ -12,9 +12,12 @@ extern NSString * const UserDidLogInNotification;
 extern NSString * const UserDidLogOutNotification;
 
 @interface User : NSObject
+@property (nonatomic, strong) NSNumber *followersCount;
+@property (nonatomic, strong) NSNumber *friendsCount;
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *screenName;
 @property (nonatomic, strong) NSURL *profileImageURL;
+@property (nonatomic, strong) NSString *screenName;
+@property (nonatomic, strong) NSNumber *statusesCount;
 @property (nonatomic, strong) NSString *userDescription;
 
 + (User *)currentUser;

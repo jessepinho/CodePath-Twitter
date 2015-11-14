@@ -10,9 +10,9 @@ The following **required** functionality is completed:
    - [ ] Dragging anywhere in the view should reveal the menu.
    - [ ] The menu should include links to your profile, the home timeline, and the mentions view.
    - [ ] The menu can look similar to the LinkedIn menu below or feel free to take liberty with the UI.
-- [ ] Profile page
+- [X] Profile page
    - [X] Contains the user header view
-   - [ ] Contains a section with the users basic stats: # tweets, # following, # followers
+   - [X] Contains a section with the users basic stats: # tweets, # following, # followers
 - [X] Home Timeline
    - [X] Tapping on a user image should bring up that user's profile page
 
