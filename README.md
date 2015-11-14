@@ -1,14 +1,14 @@
 # Project 4 - Twitter
 
-Time spent: **1** hours spent in total
+Time spent: **4** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-- [ ] Hamburger menu
+- [X] Hamburger menu
    - [X] Dragging anywhere in the view should reveal the menu.
-   - [ ] The menu should include links to your profile, the home timeline, and the mentions view.
+   - [X] The menu should include links to your profile, the home timeline, and the mentions view.
    - [X] The menu can look similar to the LinkedIn menu below or feel free to take liberty with the UI.
 - [X] Profile page
    - [X] Contains the user header view
