@@ -7,6 +7,7 @@
 //
 
 #import "ComposeViewController.h"
+#import "ProfileViewController.h"
 #import "Tweet.h"
 #import "TweetCell.h"
 #import "TweetsViewController.h"
@@ -14,7 +15,7 @@
 #import "TwitterClient.h"
 #import "User.h"
 
-@interface TweetsViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface TweetsViewController () <TweetCellDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *tweets;
@@ -81,6 +82,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TweetCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"TweetCell"];
     cell.tweet = self.tweets[indexPath.row];
+    cell.delegate = self;
     return cell;
 }
 
@@ -93,5 +95,11 @@
     vc.tweet = self.tweets[indexPath.row];
     [self.navigationController pushViewController:vc animated:YES];
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)tweetCell:(TweetCell *)cell profileImageOrScreenNameWasTappedOnTweet:(Tweet *)tweet {
+    ProfileViewController *vc = [[ProfileViewController alloc] init];
+    vc.user = tweet.user;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 @end

@@ -45,11 +45,10 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKW-HD-hE0">
-                    <rect key="frame" x="124" y="80" width="468" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKW-HD-hE0">
+                    <rect key="frame" x="8" y="116" width="584" height="21"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -57,13 +56,24 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="HiQ-NR-sUD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" id="1AK-56-s50"/>
+                <constraint firstItem="gKW-HD-hE0" firstAttribute="top" secondItem="1IU-Wa-9iQ" secondAttribute="bottom" constant="8" id="4jc-ii-Dnl"/>
+                <constraint firstItem="gKW-HD-hE0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="D9v-Le-pam"/>
                 <constraint firstItem="HiQ-NR-sUD" firstAttribute="leading" secondItem="1IU-Wa-9iQ" secondAttribute="trailing" constant="16" id="Fzo-ba-lMe"/>
                 <constraint firstItem="1IU-Wa-9iQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="HLd-F8-HoM"/>
                 <constraint firstItem="ZUK-as-e2h" firstAttribute="leading" secondItem="1IU-Wa-9iQ" secondAttribute="trailing" constant="16" id="U9t-fH-RHi"/>
+                <constraint firstItem="gKW-HD-hE0" firstAttribute="top" secondItem="ZUK-as-e2h" secondAttribute="bottom" constant="8" id="UlJ-Jg-CwX"/>
                 <constraint firstItem="HiQ-NR-sUD" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="ddU-nk-pkT"/>
                 <constraint firstItem="1IU-Wa-9iQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" id="dhy-tZ-ffi"/>
+                <constraint firstItem="gKW-HD-hE0" firstAttribute="leading" secondItem="1IU-Wa-9iQ" secondAttribute="trailing" constant="16" id="hcK-Pq-t1g"/>
                 <constraint firstItem="ZUK-as-e2h" firstAttribute="top" secondItem="HiQ-NR-sUD" secondAttribute="bottom" constant="8" id="oss-bj-yEb"/>
+                <constraint firstItem="gKW-HD-hE0" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="vdD-3f-1i0"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="UlJ-Jg-CwX"/>
+                    <exclude reference="hcK-Pq-t1g"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

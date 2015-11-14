@@ -21,13 +21,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.title = @"Profile";
     [self setUpUserViews];
 }
 
 - (void)setUpUserViews {
-    self.descriptionLabel.text = self.user.description;
+    self.descriptionLabel.text = self.user.userDescription;
+    [self.descriptionLabel sizeToFit];
     self.nameLabel.text = self.user.name;
     [self.profileImageView setImageWithURL:self.user.profileImageURL];
-    self.screenNameLabel.text = self.user.screenName;
+    self.screenNameLabel.text = [NSString stringWithFormat:@"@%@", self.user.screenName];
 }
 @end
