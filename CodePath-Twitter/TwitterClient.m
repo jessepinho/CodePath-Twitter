@@ -60,10 +60,13 @@ NSString * const kTwitterBaseUrl = @"https://api.twitter.com";
     }];
 }
 
-- (void)homeTimelineWithParams:(NSMutableDictionary *)params completion:(void (^)(NSArray *, NSError *))completion {
+- (void)timelineWithType:(TimelineType)timelineType params:(NSMutableDictionary *)params completion:(void (^)(NSArray *, NSError *))completion {
     params = params == nil ? [NSMutableDictionary dictionary] : params;
     params[@"include_my_retweet"] = @"t";
-    [self GET:@"1.1/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+
+    NSString *timelineTypeString = timelineType == TimelineTypeHome ? @"home" : @"mentions";
+    NSString *url = [NSString stringWithFormat:@"1.1/statuses/%@_timeline.json", timelineTypeString];
+    [self GET:url parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSArray *tweets = [Tweet tweetsWithArray:responseObject];
         completion(tweets, nil);
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {

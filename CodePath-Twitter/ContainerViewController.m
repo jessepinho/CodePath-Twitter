@@ -24,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.contentViewController = [[TweetsViewController alloc] init];
+    self.contentViewController = [TweetsViewController withTimelineType:TimelineTypeHome];
     [self setUpMenuViewController];
 }
 

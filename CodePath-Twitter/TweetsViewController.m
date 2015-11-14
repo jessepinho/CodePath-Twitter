@@ -23,6 +23,12 @@
 
 @implementation TweetsViewController
 
++ (id)withTimelineType:(TimelineType)timelineType {
+    TweetsViewController *vc = [[TweetsViewController alloc] init];
+    vc.timelineType = timelineType;
+    return vc;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpNavBar];
@@ -35,7 +41,7 @@
 }
 
 - (void)fetchTweetsWithCompletion:(void (^)())completion {
-    [[TwitterClient sharedInstance] homeTimelineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
+    [[TwitterClient sharedInstance] timelineWithType:self.timelineType params:nil completion:^(NSArray *tweets, NSError *error) {
         if (tweets != nil) {
             self.tweets = tweets;
             [self.tableView reloadData];

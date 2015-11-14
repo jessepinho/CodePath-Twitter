@@ -10,12 +10,17 @@
 #import "Tweet.h"
 #import "User.h"
 
+typedef NS_ENUM(NSInteger, TimelineType) {
+    TimelineTypeHome,
+    TimelineTypeMentions
+};
+
 @interface TwitterClient : BDBOAuth1RequestOperationManager
 + (TwitterClient *)sharedInstance;
 
 - (void)loginWithCompletion:(void (^)(User *user, NSError *error))completion;
 - (void)openURL:(NSURL *)url;
-- (void)homeTimelineWithParams:(NSMutableDictionary *)params completion:(void (^)(NSArray *tweets, NSError *error))completion;
+- (void)timelineWithType:(TimelineType)timelineType params:(NSMutableDictionary *)params completion:(void (^)(NSArray *tweets, NSError *error))completion;
 - (void)sendTweet:(Tweet *)tweet withCompletion:(void (^)(Tweet *tweet, NSError *error))completion;
 - (void)retweetTweet:(Tweet *)tweet withCompletion:(void (^)(Tweet *tweet, NSError *error))completion;
 - (void)likeTweet:(Tweet *)tweet withCompletion:(void (^)(Tweet *tweet, NSError *error))completion;

@@ -23,7 +23,7 @@
 }
 
 - (IBAction)onHomeButton:(id)sender {
-    [self.delegate menuViewController:self didChooseViewController:[[TweetsViewController alloc] init]];
+    [self.delegate menuViewController:self didChooseViewController:[TweetsViewController withTimelineType:TimelineTypeHome]];
 }
 
 - (IBAction)onProfileButton:(id)sender {
@@ -33,5 +33,6 @@
 }
 
 - (IBAction)onMentionsButton:(id)sender {
+    [self.delegate menuViewController:self didChooseViewController:[TweetsViewController withTimelineType:TimelineTypeMentions]];
 }
 @end
