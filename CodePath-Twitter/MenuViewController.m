@@ -6,9 +6,9 @@
 //  Copyright © 2015 Jesse Pinho. All rights reserved.
 //
 
-#import "LoggedInViewController.h"
 #import "MenuViewController.h"
 #import "ProfileViewController.h"
+#import "TweetsViewController.h"
 
 @interface MenuViewController ()
 - (IBAction)onHomeButton:(id)sender;
@@ -23,7 +23,7 @@
 }
 
 - (IBAction)onHomeButton:(id)sender {
-    [self.delegate menuViewController:self didChooseViewController:[[LoggedInViewController alloc] init]];
+    [self.delegate menuViewController:self didChooseViewController:[[TweetsViewController alloc] init]];
 }
 
 - (IBAction)onProfileButton:(id)sender {

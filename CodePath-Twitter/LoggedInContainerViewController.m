@@ -7,7 +7,7 @@
 //
 
 #import "LoggedInContainerViewController.h"
-#import "LoggedInViewController.h"
+#import "TweetsViewController.h"
 #import "MenuViewController.h"
 
 @interface LoggedInContainerViewController () <MenuViewControllerDelegate>
@@ -24,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.contentViewController = [[LoggedInViewController alloc] init];
+    self.contentViewController = [[TweetsViewController alloc] init];
     [self setUpMenuViewController];
 }
 
@@ -37,13 +37,23 @@
         [self removeContentViewController];
     }
 
-    [contentViewController willMoveToParentViewController:self];
-    [self addChildViewController:contentViewController];
-    [self.contentView addSubview:contentViewController.view];
-    contentViewController.view.frame = self.contentView.frame;
-    [contentViewController didMoveToParentViewController:self];
 
-    _contentViewController = contentViewController;
+    UINavigationController *nvc = [self navigationControllerWithRootViewController:contentViewController];
+    [nvc willMoveToParentViewController:self];
+    [self addChildViewController:nvc];
+    [self.contentView addSubview:nvc.view];
+    nvc.view.frame = self.contentView.frame;
+    [nvc didMoveToParentViewController:self];
+
+    _contentViewController = nvc;
+}
+
+- (UINavigationController *)navigationControllerWithRootViewController:(UIViewController *)viewController {
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:viewController];
+    nvc.navigationBar.barTintColor = [UIColor colorWithRed:85.0f/255.0f green:172.0f/255.0f blue:238.0/255.0f alpha:1];
+    nvc.navigationBar.tintColor = [UIColor whiteColor];
+    nvc.navigationBar.titleTextAttributes = @{ NSForegroundColorAttributeName: [UIColor whiteColor] };
+    return nvc;
 }
 
 - (void)setUpMenuViewController {

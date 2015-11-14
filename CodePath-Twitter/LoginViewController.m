@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-#import "LoggedInViewController.h"
+#import "LoggedInContainerViewController.h"
 #import "TwitterClient.h"
 
 @interface LoginViewController ()
@@ -18,7 +18,7 @@
 - (IBAction)onLogin:(id)sender {
     [[TwitterClient sharedInstance] loginWithCompletion:^(User *user, NSError *error) {
         if (user != nil) {
-            [self presentViewController:[[LoggedInViewController alloc] init] animated:YES completion:nil];
+            [self presentViewController:[[LoggedInContainerViewController alloc] init] animated:YES completion:nil];
         } else {
         }
     }];

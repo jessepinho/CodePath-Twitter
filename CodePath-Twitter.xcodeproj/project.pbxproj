@@ -20,7 +20,6 @@
 		3AD4979F1BEC47CC00C8D4BB /* TweetsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD4979D1BEC47CC00C8D4BB /* TweetsViewController.xib */; };
 		3AD497A51BEC555600C8D4BB /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD497A31BEC555600C8D4BB /* TweetCell.m */; };
 		3AD497A61BEC555600C8D4BB /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD497A41BEC555600C8D4BB /* TweetCell.xib */; };
-		3AD497AC1BEC651800C8D4BB /* LoggedInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD497AB1BEC651800C8D4BB /* LoggedInViewController.m */; };
 		3AD497B01BEC6CC100C8D4BB /* TweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD497AE1BEC6CC100C8D4BB /* TweetViewController.m */; };
 		3AD497B11BEC6CC100C8D4BB /* TweetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD497AF1BEC6CC100C8D4BB /* TweetViewController.xib */; };
 		3AD497B51BEC782000C8D4BB /* TweetDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD497B41BEC782000C8D4BB /* TweetDateFormatter.m */; };
@@ -55,8 +54,6 @@
 		3AD497A21BEC555600C8D4BB /* TweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetCell.h; sourceTree = "<group>"; };
 		3AD497A31BEC555600C8D4BB /* TweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetCell.m; sourceTree = "<group>"; };
 		3AD497A41BEC555600C8D4BB /* TweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCell.xib; sourceTree = "<group>"; };
-		3AD497AA1BEC651800C8D4BB /* LoggedInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggedInViewController.h; sourceTree = "<group>"; };
-		3AD497AB1BEC651800C8D4BB /* LoggedInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggedInViewController.m; sourceTree = "<group>"; };
 		3AD497AD1BEC6CC100C8D4BB /* TweetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetViewController.h; sourceTree = "<group>"; };
 		3AD497AE1BEC6CC100C8D4BB /* TweetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetViewController.m; sourceTree = "<group>"; };
 		3AD497AF1BEC6CC100C8D4BB /* TweetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetViewController.xib; sourceTree = "<group>"; };
@@ -112,8 +109,6 @@
 				3A75E2F31BED64A1007DE4EB /* ComposeViewController.h */,
 				3A75E2F41BED64A1007DE4EB /* ComposeViewController.m */,
 				3A75E2F51BED64A1007DE4EB /* ComposeViewController.xib */,
-				3AD497AA1BEC651800C8D4BB /* LoggedInViewController.h */,
-				3AD497AB1BEC651800C8D4BB /* LoggedInViewController.m */,
 				EC54955C1BEAF219001FBFE1 /* LoginViewController.h */,
 				EC54955D1BEAF219001FBFE1 /* LoginViewController.m */,
 				EC54955E1BEAF219001FBFE1 /* LoginViewController.xib */,
@@ -327,7 +322,6 @@
 				EC5495631BEAF4E7001FBFE1 /* TwitterClient.m in Sources */,
 				3AD497B51BEC782000C8D4BB /* TweetDateFormatter.m in Sources */,
 				EC5495481BEAEEB0001FBFE1 /* AppDelegate.m in Sources */,
-				3AD497AC1BEC651800C8D4BB /* LoggedInViewController.m in Sources */,
 				ECF03D241BEB05ED00D5DB7A /* User.m in Sources */,
 				3AD497B01BEC6CC100C8D4BB /* TweetViewController.m in Sources */,
 				ECF03D211BEB05D900D5DB7A /* Tweet.m in Sources */,
