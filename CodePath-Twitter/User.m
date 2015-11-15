@@ -57,6 +57,7 @@ NSString * const kCurrentUserKey = @"kCurrentUserKey";
     }
 
     [[NSUserDefaults standardUserDefaults] synchronize];
+    [[NSNotificationCenter defaultCenter] postNotificationName:UserDidLogInNotification object:nil];
 }
 
 + (void)logOut {

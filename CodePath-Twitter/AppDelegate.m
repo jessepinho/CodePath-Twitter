@@ -23,6 +23,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDidLogIn) name:UserDidLogInNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDidLogOut) name:UserDidLogOutNotification object:nil];
 
     User *user = [User currentUser];
@@ -35,8 +36,14 @@
     return YES;
 }
 
+- (void)userDidLogIn {
+    [UIView transitionWithView:self.window duration:0.35 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
+        self.window.rootViewController = [[ContainerViewController alloc] init];
+    } completion:nil];
+}
+
 - (void)userDidLogOut {
-    [UIView transitionWithView:self.window duration:0.35 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+    [UIView transitionWithView:self.window duration:0.35 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
         self.window.rootViewController = [[LoginViewController alloc] init];
     } completion:nil];
 }

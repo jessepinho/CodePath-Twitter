@@ -16,11 +16,6 @@
 
 @implementation LoginViewController
 - (IBAction)onLogin:(id)sender {
-    [[TwitterClient sharedInstance] loginWithCompletion:^(User *user, NSError *error) {
-        if (user != nil) {
-            [self presentViewController:[[ContainerViewController alloc] init] animated:YES completion:nil];
-        } else {
-        }
-    }];
+    [[TwitterClient sharedInstance] logIn];
 }
 @end
