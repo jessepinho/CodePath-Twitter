@@ -10,6 +10,7 @@
                 <outlet property="contentView" destination="hbA-aW-1Mm" id="cIz-3m-AiG"/>
                 <outlet property="leftMarginConstraint" destination="2ib-Hk-esG" id="Mei-VR-YsJ"/>
                 <outlet property="menuView" destination="A3s-LB-cyu" id="EjI-93-H5h"/>
+                <outlet property="tapGestureRecognizer" destination="n6p-QY-S4e" id="sSS-ds-RmQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,6 +31,7 @@
                     <gestureRecognizers/>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="48O-13-472" appends="YES" id="vTL-rc-sRo"/>
+                        <outletCollection property="gestureRecognizers" destination="n6p-QY-S4e" appends="YES" id="7OC-AZ-XDf"/>
                     </connections>
                 </view>
             </subviews>
@@ -51,5 +53,10 @@
                 <action selector="onPanGesture:" destination="-1" id="ZCC-XY-9Ju"/>
             </connections>
         </panGestureRecognizer>
+        <tapGestureRecognizer id="n6p-QY-S4e">
+            <connections>
+                <action selector="onTapGesture:" destination="-1" id="oLR-ei-aLc"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

@@ -13,7 +13,6 @@
 #import "TweetsViewController.h"
 #import "TweetViewController.h"
 #import "TwitterClient.h"
-#import "User.h"
 
 @interface TweetsViewController () <TweetCellDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
@@ -34,10 +33,6 @@
     [self setUpNavBar];
     [self setUpTable];
     [self fetchTweetsWithCompletion:nil];
-}
-
-- (void)logOut {
-    [User logOut];
 }
 
 - (void)fetchTweetsWithCompletion:(void (^)())completion {
@@ -66,7 +61,6 @@
 - (void)setUpNavBar {
     self.title = @"Timeline";
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Twitter"]];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(logOut)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(onTweet)];
 }
 

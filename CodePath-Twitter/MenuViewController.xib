@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbb-g4-nNJ">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbb-g4-nNJ" userLabel="Home">
                     <rect key="frame" x="8" y="8" width="48" height="48"/>
                     <animations/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -25,7 +25,7 @@
                         <action selector="onHomeButton:" destination="-1" eventType="touchUpInside" id="7QR-QF-cEg"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSa-37-v0S">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSa-37-v0S" userLabel="Profile">
                     <rect key="frame" x="8" y="72" width="48" height="48"/>
                     <animations/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,13 +34,23 @@
                         <action selector="onProfileButton:" destination="-1" eventType="touchUpInside" id="wCy-uX-vec"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbE-05-T4O">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbE-05-T4O" userLabel="Mentions">
                     <rect key="frame" x="8" y="136" width="48" height="48"/>
                     <animations/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <state key="normal" image="ic_comment_48pt"/>
                     <connections>
                         <action selector="onMentionsButton:" destination="-1" eventType="touchUpInside" id="sZj-SJ-S6p"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOH-1w-VAI" userLabel="Log out">
+                    <rect key="frame" x="8" y="200" width="48" height="48"/>
+                    <animations/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="ic_close_48pt"/>
+                    <connections>
+                        <action selector="onLogOutButton:" destination="-1" eventType="touchUpInside" id="pr7-oZ-laF"/>
+                        <action selector="onMentionsButton:" destination="-1" eventType="touchUpInside" id="PdY-oO-Xmi"/>
                     </connections>
                 </button>
             </subviews>
@@ -53,10 +63,13 @@
                 <constraint firstItem="cbE-05-T4O" firstAttribute="top" secondItem="HSa-37-v0S" secondAttribute="bottom" constant="16" id="CJL-3W-ndj"/>
                 <constraint firstItem="cbE-05-T4O" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="NTe-6s-tyi"/>
                 <constraint firstItem="tbb-g4-nNJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" id="QLV-0R-SbR"/>
+                <constraint firstItem="IOH-1w-VAI" firstAttribute="top" secondItem="cbE-05-T4O" secondAttribute="bottom" constant="16" id="diu-8i-M1c"/>
+                <constraint firstItem="IOH-1w-VAI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="nU5-j2-bxS"/>
             </constraints>
         </view>
     </objects>
     <resources>
+        <image name="ic_close_48pt" width="48" height="48"/>
         <image name="ic_comment_48pt" width="48" height="48"/>
         <image name="ic_home_48pt" width="48" height="48"/>
         <image name="ic_person_48pt" width="48" height="48"/>

@@ -11,13 +11,16 @@
 #import "MenuViewController.h"
 
 @interface ContainerViewController () <MenuViewControllerDelegate>
-@property (weak, nonatomic) IBOutlet UIView *menuView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (nonatomic, strong) UIViewController *contentViewController;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftMarginConstraint;
+@property (nonatomic) BOOL menuIsOpen;
+@property (weak, nonatomic) IBOutlet UIView *menuView;
 @property (nonatomic) CGFloat originalLeftMargin;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGestureRecognizer;
 
 - (IBAction)onPanGesture:(UIPanGestureRecognizer *)sender;
+- (IBAction)onTapGesture:(UITapGestureRecognizer *)sender;
 @end
 
 @implementation ContainerViewController
@@ -39,6 +42,10 @@
     }
 
     UINavigationController *nvc = [self navigationControllerWithRootViewController:contentViewController];
+    contentViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu"
+                                                                                              style:UIBarButtonItemStylePlain
+                                                                                             target:self
+                                                                                             action:@selector(openMenu)];
     [nvc willMoveToParentViewController:self];
     [self addChildViewController:nvc];
     [self.contentView addSubview:nvc.view];
@@ -74,17 +81,11 @@
 }
 
 - (void)closeMenu {
-    [UIView animateWithDuration:0.35 animations:^{
-        self.leftMarginConstraint.constant = 0;
-        [self.view layoutIfNeeded];
-    }];
+    self.menuIsOpen = NO;
 }
 
 - (void)openMenu {
-    [UIView animateWithDuration:0.35 animations:^{
-        self.leftMarginConstraint.constant = 80;
-        [self.view layoutIfNeeded];
-    }];
+    self.menuIsOpen = YES;
 }
 
 - (void)removeContentViewController {
@@ -111,7 +112,22 @@
     }
 }
 
+- (IBAction)onTapGesture:(UITapGestureRecognizer *)sender {
+    [self closeMenu];
+}
+
 - (void)menuViewController:(MenuViewController *)menuViewController didChooseViewController:(UIViewController *)viewController {
     self.contentViewController = viewController;
+}
+
+- (void)setMenuIsOpen:(BOOL)menuIsOpen {
+    _menuIsOpen = menuIsOpen;
+    self.tapGestureRecognizer.enabled = menuIsOpen;
+    self.contentViewController.view.userInteractionEnabled = !menuIsOpen;
+
+    [UIView animateWithDuration:0.35 animations:^{
+        self.leftMarginConstraint.constant = menuIsOpen ? 80 : 0;
+        [self.view layoutIfNeeded];
+    }];
 }
 @end

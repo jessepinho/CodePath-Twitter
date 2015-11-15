@@ -9,11 +9,13 @@
 #import "MenuViewController.h"
 #import "ProfileViewController.h"
 #import "TweetsViewController.h"
+#import "User.h"
 
 @interface MenuViewController ()
 - (IBAction)onHomeButton:(id)sender;
 - (IBAction)onProfileButton:(id)sender;
 - (IBAction)onMentionsButton:(id)sender;
+- (IBAction)onLogOutButton:(id)sender;
 @end
 
 @implementation MenuViewController
@@ -34,5 +36,9 @@
 
 - (IBAction)onMentionsButton:(id)sender {
     [self.delegate menuViewController:self didChooseViewController:[TweetsViewController withTimelineType:TimelineTypeMentions]];
+}
+
+- (IBAction)onLogOutButton:(id)sender {
+    [User logOut];
 }
 @end
