@@ -1,6 +1,6 @@
 # Project 4 - Twitter
 
-Time spent: **4** hours spent in total
+Time spent: **5** hours spent in total
 
 ## User Stories
 
@@ -30,7 +30,8 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [X] Tapping on the main content view closes the hamburger menu.
+- [X] Logging in/out is animated.
 
 ## Video Walkthrough
 
