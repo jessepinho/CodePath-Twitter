@@ -36,7 +36,9 @@
 }
 
 - (void)userDidLogOut {
-    self.window.rootViewController = [[LoginViewController alloc] init];
+    [UIView transitionWithView:self.window duration:0.35 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+        self.window.rootViewController = [[LoginViewController alloc] init];
+    } completion:nil];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
